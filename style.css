@@ -1,0 +1,32 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+  background-image: url("https://th.bing.com/th/id/OIP.U8H_0LK76Aw734j6a6wWbwAAAA?pid=ImgDet&rs=1");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+.form-container {
+  border-radius: 10px;
+  backdrop-filter: blur(30px);
+  padding: 20px;
+  margin-bottom: 50px;
+}
+label {
+  font-size: 25px;
+}
+.fixed-header {
+  position: sticky;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background: rgba(20, 18, 88, 0.703);
+  border-radius: 10px 10px;
+  border: 1px solid rgba(145, 139, 139, 0.2);
+  transition: all 0.2s;
+  padding: 10px;
+}
