@@ -1,9 +1,11 @@
-const form=document.getElementById('login');
-const email=document.getElementById('userEmail');
-const password=document.getElementById('password');
+const form= document.getElementById('login');
+const email= document.getElementById('userEmail');
+const password= document.getElementById('password');
 form.addEventListener('submit',(e)=>{
     if(!validateInputs()){
         e.preventDefault();
+    }else{
+        window.alert('success');
     }
 })
 function validateInputs(){
@@ -14,6 +16,9 @@ function validateInputs(){
     if(emailVal===''){
         success=false;
         setError(userEmail,'Email is required')
+    }else if(!validateEmail(emailVal)){
+        success=false
+        setError(userEmail,'Please Enter a valid email')
     }else{
         setSuccess(userEmail)
     }
@@ -28,10 +33,12 @@ function validateInputs(){
     else{
         setSuccess(password)
     }
+    return success;
 }
 function setError(element,message){
     const inputGroup=element.parentElement;
     const errorElement=inputGroup.querySelector('.error')
+
     errorElement.innerText=message;
     inputGroup.classList.add('error')
     inputGroup.classList.remove('success')
@@ -40,7 +47,7 @@ function setSuccess(element){
     const inputGroup = element.parentElement;
     const errorElement = inputGroup.querySelector('.error')
 
-    errorElement.innerText = '';
+    errorElement.innerText = 'message';
     inputGroup.classList.add('success')
     inputGroup.classList.remove('error')
 }
@@ -52,3 +59,4 @@ const validateEmail = (userEmail) => {
         /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
       );
   };
+ 

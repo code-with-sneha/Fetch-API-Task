@@ -8,6 +8,8 @@ const cpassword = document.querySelector('#cpassword');
 form.addEventListener('submit',(e)=>{ 
     if(!validateInputs()){
         e.preventDefault();
+    }else{
+        window.alert("Success!")
     }
 })
 
@@ -71,7 +73,6 @@ function validateInputs(){
     }
 
     return success;
-
 }
 //element - password, msg- pwd is reqd
 function setError(element,message){
@@ -99,3 +100,7 @@ const validateEmail = (userEmail) => {
         /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
       );
   };
+
+  
+
+
